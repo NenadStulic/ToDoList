@@ -1,0 +1,123 @@
+body {
+    font: normal normal 16px Arial;
+    background: #9bf805;
+    text-align: center;
+    }
+    
+    h1 {
+        color: aqua;
+    }
+    
+    .container{
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: orange;
+    border-radius: 5px;
+    }
+    
+    form {
+    display: inline-block;
+    }
+    
+    input{
+    padding: 4px 15px 4px 5px;
+    border-radius: 5px;
+    }
+    
+    #button{
+    display: inline-block;
+    background-color:#eb080b;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:center;
+    margin-top:2px;
+    padding: 5px 15px;
+    }
+    
+    #button:hover{
+    cursor: pointer;
+    color: #eb080b;
+    opacity: .6;
+    background-color: #9bf805;
+    }
+    #deleteAll {
+    
+    float: right;
+    background-color:#eb080b;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:center;
+    line-height: 15px;
+    margin-top:2px;
+    margin-right: 10px;
+    padding: 5px 15px;
+    }
+    
+    #deleteAll:hover {
+    cursor: pointer;
+    color: #eb080b;
+    opacity: .6;
+    background-color: #9bf805;
+    }
+    
+    ul {
+        padding-left: 8px;
+        padding-right: 8px;
+        list-style: none;
+        text-align: left;
+    }
+    
+    ul li {
+        padding: 5px;color:white;
+    }
+    
+    ul li:nth-child(even){
+        background: orangered;
+        }
+    ul li:nth-child(odd){
+        background:cyan;
+        }
+    
+    .strike{
+        text-decoration: line-through;
+        }
+    
+    li:hover{
+        opacity: .85;
+        cursor: pointer;
+     }
+    
+     .remove {
+    float: right;
+    cursor: pointer;
+    }
+    
+    a.remove:hover {
+      background-color: red;  
+    }
+    
+    p {
+        color: white;
+        text-align: left;
+    }
+    
+    #done , #notDone {
+        display: inline-block;
+        color: #ffffff;
+        text-align:center;
+        border: 1px solid black;
+        height: 50px;
+        width: 140px;
+        padding-top: 0px;
+        margin-top: 0px;
+        
+    }
+    #done {
+        background-color: #9bf805;
+    }
+    
+    #notDone {
+        background-color: red;
+    }
