@@ -10,43 +10,51 @@
     <script>
         $(document).ready(function(){
 
-        $('#button').click(function(){
-                var toAdd = $('#ListItem').val();
-                 $('ul').append('<li><input type=checkbox class=checked>' + toAdd + '<a class="remove"> &times;</a></li>');
-            });
-      //da se spreci kad se pritisne enter brisanje liste 
-       $('#ListItem').keydown(function(event){
-          if(event.which == 13){
-            event.preventDefault();
-          }         
-      });
-     //prilikom cekiranja dodaje se klasa 'strike' ili se ukljanja kad se odcekira
-      $(document).on('change','li', function(){
-        $(this).toggleClass('strike'); 
-       
-      });
-      // ponovnim klikom u polje za unos se obrise prethodno unesen zadatak
-      $('input').focus(function() {
-        $(this).val('');
-      });
-      // pojedinacno brisanje uradjenih ili neuradjenih
-      $(document).on('click', '.remove', function()
-	  {
-	    $(this).parent().remove();
-        $('#done1').text($('ul').children().length );
-	 
-	  });
-      // brisanje svih uradjenih
-      $('#deleteAll').click( function(){
-    
-        $('li.strike').remove();
-	 
+$('#button').click(function(){
+        var toAdd = $('#ListItem').val();
+         $('ul').append('<li><input type=checkbox class=checked>' + toAdd + '<a class="remove"> &times;</a></li>');
+//broji dodane zadatke
+         $('#notDone1').text($('ul').children().length );
+//isprazni polje za unos nakon klika na dugme za dpdavanje zadatka
+         $("#ListItem").val('').keyup(); 
     });
 
- 
+//da se spreci kad se pritisne enter brisanje liste 
+$('#ListItem').keydown(function(event){
+  if(event.which == 13){
+    event.preventDefault();
+  }         
+});
+//prilikom cekiranja dodaje se klasa 'strike' ili se ukljanja kad se odcekira
+$(document).on('change','li', function(){
+$(this).toggleClass('strike'); 
 
-      
-    }
+});
+// ponovnim klikom u polje za unos se obrise prethodno unesen zadatak. Ovaj kod je bio na pocetku dok nisam nasao da moze drugacije.
+$('input').focus(function() {
+$(this).val('');
+});
+// pojedinacno brisanje uradjenih ili neuradjenih
+$(document).on('click', '.remove', function()
+{
+$(this).parent().remove();
+//prilikom brisanja brojac umanjuje broj zadataka  
+$('#notDone1').text($('ul').children().length );
+
+});
+// brisanje svih uradjenih
+$('#deleteAll').click( function(){
+
+$('li.strike').remove();
+
+$('#notDone1').text($('ul').children().length );
+
+});
+
+
+
+
+}
 );
     </script>
     
@@ -67,12 +75,12 @@
             <br>
             <ul style="color:white;">Doživeti stotu ;)</ul>
             <br>
-           <!--  <div id="done">
+             <div id="done">
           <h5>Urađeno: <span id="done1">5</span></h5>
             </div>
             <div id="notDone">
                 <h5>Neurađeno: <span id="notDone1">5</span></h5>
-            </div> -->   
+            </div> 
     
           
         
